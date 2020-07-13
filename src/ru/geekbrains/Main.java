@@ -24,6 +24,11 @@ public class Main {
        }
     }
 
+    private static boolean checkLimit (int first, int second) {
+        int summ = first + second;
+        return summ >= 10 & summ <= 20;
+    }
+
 
     public static void main(String[] args) {
 	// write your code here
@@ -31,6 +36,8 @@ public class Main {
         double b = 0;
         double c = 0;
         double d = 0;
+        int first = 0;
+        int second = 0;
         System.out.println("Введите значения: ");
 
         Scanner scanner = new Scanner(System.in);
@@ -42,10 +49,19 @@ public class Main {
         c = scanner.nextDouble();
         System.out.println("Введите четвертый параметр d: " );
         d = scanner.nextDouble();
-
-
-
         aDouble = doMath(a, b, c, d);
-        System.out.print("Результат вычисления a * (b + (c / d)): " + aDouble);
+        System.out.println ("Результат вычисления a * (b + (c / d)): " + aDouble);
+        System.out.println();
+        System.out.println("===================================================");
+        System.out.println();
+        System.out.println("Введите 2 целых числа: ");
+        System.out.println("Введите первое число: " );
+        first = scanner.nextInt();
+        System.out.println("Введите второе число: " );
+        second = scanner.nextInt();
+        if (checkLimit(first, second)) System.out.println("Сумма введенных чисел находиться в " +
+                "диапазоне 10 <= sum <= 20 " + checkLimit(first, second) );
+        else System.out.println("Сумма введенных чисел не находиться в " +
+                "диапазоне 10 <= sum <= 20 " + checkLimit(first, second) );
     }
 }
